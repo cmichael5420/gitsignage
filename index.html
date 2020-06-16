@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bamboo House</title>
+
+		<style>
+		img { width: 1920px; height: 1080px; object-fit: cover;}
+		body { margin: 0px; overflow-x: hidden; overflow-y: hidden;}
+		</style>
+
+	</head>
+
+	<body>
+		<img id = "image" src = "/home/pi/Pictures/demsem.jpg">
+		<script>
+			const asyncWait = ms => new Promise(resolve => setTimeout(resolve, ms));
+			var reload = false;
+
+			changeImage();			
+
+			function changeImage() {
+			(async () => {
+			document.getElementById("image").src = "/home/pi/Documents/demsem.jpg";
+			await asyncWait(5000);
+			document.getElementById("image").src = "/home/pi/Documents/dish.jpg";
+			await asyncWait(5000);
+			document.getElementById("image").src = "/home/pi/Documents/dumpings.jpg";
+			await asyncWait(5000);
+			
+			time = new Date();
+			if (time.getHours() == 22 && time.getMinutes() == 0){
+				reload = true;
+			}
+			if (time.getHours() == 22 && time.getMinutes() == 1 && reload == true){
+				location.reload();
+			}
+
+			if (time.getHours() == 10 && time.getMinutes() == 0){
+				reload = true;
+			}
+			if (time.getHours() == 10 && time.getMinutes() == 1 && reload == true){
+				location.reload();
+			}
+			console.log(time);
+			delete time;
+
+			changeImage();
+			})()
+			}
+
+		</script>
+	</body>
+</html>
