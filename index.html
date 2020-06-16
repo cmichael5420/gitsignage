@@ -23,6 +23,8 @@
 
 			function changeImage() {
 			(async () => {
+			document.getElementById("image").src = "/home/pi/Documents/healthy.jpg";
+			await asyncWait(5000);
 			document.getElementById("image").src = "/home/pi/Documents/demsem.jpg";
 			await asyncWait(5000);
 			document.getElementById("image").src = "/home/pi/Documents/dish.jpg";
