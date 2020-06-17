@@ -23,6 +23,13 @@
 
 			function changeImage() {
 			(async () => {
+			document.getElementById("image").src = "/home/pi/Documents/1.jpg";
+			await asyncWait(5000);
+			document.getElementById("image").src = "/home/pi/Documents/2.jpg";
+			await asyncWait(5000);
+			document.getElementById("image").src = "/home/pi/Documents/3.jpg";
+			await asyncWait(5000);
+/*			
 			document.getElementById("image").src = "/home/pi/Documents/tasty.jpg";
 			await asyncWait(5000);
 			document.getElementById("image").src = "/home/pi/Documents/food.jpg";
@@ -35,7 +42,7 @@
 			await asyncWait(5000);
 			document.getElementById("image").src = "/home/pi/Documents/dumpings.jpg";
 			await asyncWait(5000);
-			
+*/			
 			time = new Date();
 			if (time.getHours() == 22 && time.getMinutes() == 0){
 				reload = true;
